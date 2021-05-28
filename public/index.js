@@ -115,6 +115,7 @@ const uploadFile = () => {
 
   xhr.open("POST", uploadURL);
   xhr.send(formData);
+
 };
 
 const onFileUploadSuccess = (res) => {

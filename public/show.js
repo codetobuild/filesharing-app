@@ -21,7 +21,7 @@ router.get('/:uuid',  async(req, res) => {
         fileName: file.fileName,
         fileSize : file.fileSize,
         downloadLink: `${process.env.APP_BASE_URL}/files/download/${file.uuid}`
-        //http://localhost:3000/files/download/q2390jfq9339j
+        //https://filesharing-nokha.herokuapp.com/files/download/q2390jfq9339j
 
     })
     

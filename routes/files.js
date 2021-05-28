@@ -9,7 +9,7 @@ let storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads/') ,
     filename: (req, file, cb) => {
         const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`;
-              cb(null, uniqueName)
+        cb(null, uniqueName)
     } ,
 });
 
@@ -32,6 +32,7 @@ router.post('/', (req, res) => {
             path: req.file.path,
             fileSize: req.file.size
         });
+
         const response = await file.save();
         console.log(response);
         res.json({ file: `${process.env.APP_BASE_URL}/files/${response.uuid}` });
@@ -89,6 +90,7 @@ router.post('/send', async (req, res) => {
 
     return res.send( {success: true})
 })
+
 module.exports = router
 
 
